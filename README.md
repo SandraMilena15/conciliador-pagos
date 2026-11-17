@@ -16,5 +16,9 @@ duplicados y cortes de fecha, y mide el margen por transacción.
 - [ ] Motor de cruce y clasificación de diferencias
 - [ ] Dashboard y agente de consulta
 
+## Hallazgos principales
+- 54 ventas registradas dos veces en la plataforma, por $2.467.455 COP (valor bruto) en posibles sobrepagos.
+- 127 filas duplicadas por error de exportación, depuradas antes del cruce.
+
 ## Autora
 Sandra Milena López · [LinkedIn](https://linkedin.com/in/smilenalopezpuentes)
