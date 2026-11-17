@@ -2,6 +2,13 @@
 
 Conciliación de dos vías: **plataforma (`stg_plataforma`) vs. pasarela (`stg_pasarela`)**.
 
+## 0. Antes de cruzar
+
+Quitar las copias exactas (una fila por treinta_transaction_id).
+Excluir los registros inválidos (RRN distinto de 12 dígitos).
+Si un RRN tiene 2 ventas en la plataforma, la original es aquella cuya hora coincide con los primeros 6 dígitos del RRN. La otra se clasifica como “registro duplicado en plataforma”, un tipo de diferencia nuevo.
+
+
 ## 1. Llave principal: RRN
 El **RRN** (*Retrieval Reference Number*) es el número único de 12 dígitos que
 la red de pagos asigna a cada transacción con tarjeta. Funciona como la cédula
