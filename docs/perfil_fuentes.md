@@ -58,10 +58,10 @@ Ejemplo: 98.000 − 68 − 588 − 1.587,6 = 95.756,4 ✔
 - **Posible fraccionamiento o duplicado:** 5 compras idénticas de $98.000 en el terminal 21004823 en el mismo minuto.
 - **Margen:** Treinta cobra 2,99 %, y la pasarela cuesta ≈ 0,6 % + $68 + ≈ 1,6 % de franquicia → hay que verificar el margen por transacción.
 - **Retenciones:** el ReteICA varía entre 0,41 % y 0,42 %.
-- **Plataforma: - **127 filas son copias exactas (error de exportación) → se depuran antes de cruzar.
-- **Plataforma:- ** 54 ventas registradas dos veces con el mismo RRN y el mismo reference_id, a horas distintas → posible sobrepago de $___ a comercios.
-- **Pasarela:- ** 1 registro inválido (RRN = 0, fecha en formato MM/DD) → se excluye del cruce.
-- **Las fuentes cubren periodos distintos → la conciliación se limita a marzo de 2023.- **
+- **Plataforma:** 127 filas son copias exactas (error de exportación) → se depuran antes de cruzar.
+- **Plataforma:** 54 ventas registradas dos veces, con el mismo RRN y el mismo `reference_id` a horas distintas → posible sobrepago de $2.467.455 COP (valor bruto; el neto se calcula en la etapa de cruce).
+- **Pasarela:** 1 registro inválido (RRN = 0, fecha en formato MM/DD) → se excluye del cruce.
+- **Periodo:** las fuentes cubren periodos distintos → la conciliación se limita a marzo de 2023.
 
 ## 6. Riesgos de los datos
 - Excel puede dañar el RRN → importar desde CSV con la columna como texto.

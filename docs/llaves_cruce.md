@@ -3,10 +3,9 @@
 Conciliación de dos vías: **plataforma (`stg_plataforma`) vs. pasarela (`stg_pasarela`)**.
 
 ## 0. Antes de cruzar
-
-Quitar las copias exactas (una fila por treinta_transaction_id).
-Excluir los registros inválidos (RRN distinto de 12 dígitos).
-Si un RRN tiene 2 ventas en la plataforma, la original es aquella cuya hora coincide con los primeros 6 dígitos del RRN. La otra se clasifica como “registro duplicado en plataforma”, un tipo de diferencia nuevo.
+1. Quitar las copias exactas (una fila por `treinta_transaction_id`).
+2. Excluir los registros inválidos (RRN distinto de 12 dígitos).
+3. Si un RRN tiene 2 ventas en la plataforma, la original es la que tiene la hora que coincide con los primeros 6 dígitos del RRN. La otra se clasifica como **"registro duplicado en plataforma"**.
 
 
 ## 1. Llave principal: RRN
@@ -41,6 +40,7 @@ Ejemplo: `235911325701` → 23:59:11, que coincide con `11:59 PM` en `created_at
 | Duplicado | RRN repetido en una fuente | Pago doble |
 | Corte de fecha | Mismo RRN, el día cambia cerca de la medianoche | Falso descuadre (no es un error real) |
 | Reverso | La pasarela marca reverso | La venta no debe pagarse |
+| Registro duplicado en plataforma | Mismo RRN y `reference_id`, dos `treinta_transaction_id` | Pagarle dos veces la misma venta al comercio |
 
 ## 4. Supuestos y pendientes
 - La tolerancia de ± 5 min del nivel 2 es un supuesto; se ajusta después de ver los datos.
